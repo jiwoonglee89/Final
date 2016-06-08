@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Web</title>
+<title>Web Cell Join Page</title>
 </head>
 <body
 >
