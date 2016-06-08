@@ -5,7 +5,9 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import Final.Dao.FileLoadDao;
 import Final.Dao.MemberDao;
@@ -25,10 +27,13 @@ public class MemberController
 		this.memberDao = memberDao;
 	}
 
-
-
 	public void setFileLoadDao(FileLoadDao fileLoadDao) {
 		this.fileLoadDao = fileLoadDao;
+	}
+	
+	@ModelAttribute("memberInfo")
+	public MemberInfo memberInfo(){
+		return new MemberInfo();
 	}
 
 
@@ -37,16 +42,35 @@ public class MemberController
 	public String join()
 	{
 		
+		
 		return "join";
 	}
 	
 
-	@RequestMapping("/modify.do")
-	public String modifyForm(){
+	@RequestMapping("/modifyForm.do")
+	public ModelAndView modifyForm(HttpServletRequest request){
+		HttpSession session = request.getSession();
+		String id = (String) session.getAttribute("id");
 		
+		ModelAndView mav = new ModelAndView("modifyForm");
+		MemberInfo member = memberDao.getMember(id);
+		
+		mav.addObject("memberInfo", member);
 		     
-		return "modifyForm";
+		return mav;
 	}
+	
+	@RequestMapping("/modify.do")
+	public String modify(@ModelAttribute("memberInfo")MemberInfo memberInfo){
+		
+		int success = memberDao.modify(memberInfo);
+		
+		if (success>0) {
+			return "board";
+		}
+		return "login";
+	}
+	
 	
 	
 	@RequestMapping("/delete.do")
@@ -66,6 +90,6 @@ public class MemberController
 		if (session!=null) {
 			session.invalidate();
 		}
-		return "main";
+		return "login";
 	}
 }

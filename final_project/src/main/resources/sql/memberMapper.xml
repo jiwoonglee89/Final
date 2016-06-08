@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="member">
+	<select id="one" parameterType="String" resultType="Final.Model.MemberInfo">
+		select * from member where id=#{id}
+	</select>
+	
+	<update id="modify" parameterType="Final.Model.MemberInfo">
+		update member set password=#{password}, name=#{name},
+		birth=#{birth},phone=#{phone},email=#{email},
+		zipcode=#{zipcode},address where id=#{id}
+	</update>
+	
+</mapper>
