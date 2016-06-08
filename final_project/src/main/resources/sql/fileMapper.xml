@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="file">
+	<select id="allById" parameterType="String" resultType="Final.Model.FileInfo">
+		select * from file_data where id=${id} order by modify_date desc
+	</select>
+	
+	<delete id="delete" parameterType="String">
+		delete from file_data where title=#{title}
+	</delete>
+	
+</mapper>

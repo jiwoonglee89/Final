@@ -27,7 +27,7 @@
 		<property name="mapperLocations" value="classpath:sql/*.xml" />
 	</bean>
 	<!-- DAO 주입 -->
-	<bean id="fileDao" class="spring.mybatis.file.dao.FileDao">
+	<bean id="FileLoadDao" class="spring.mybatis.file.dao.FileDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 
