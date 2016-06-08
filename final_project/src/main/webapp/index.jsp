@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<c:redirect url="main.do"/>
+<c:redirect url="login.do"/>
 
 
 </body>
