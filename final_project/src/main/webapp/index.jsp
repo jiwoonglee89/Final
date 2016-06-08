@@ -5,10 +5,6 @@
 <title></title>
 </head>
 <body>
-
-<%-- <c:redirect url="/joinPage/join.do"/> --%>
-<a href="join.do">이동</a>
-
-
+<c:redirect url="/login.do"/> 
 </body>
 </html>
