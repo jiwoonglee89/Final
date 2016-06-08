@@ -10,8 +10,10 @@
 
 	<context:property-placeholder location="classpath:db.properties" />
 	<context:annotation-config />
-	<context:component-scan base-package="joinController,loginController" />
-
+	<context:component-scan base-package="Final.Controller"/>
+	<context:component-scan base-package="Final.Model"/>
+	<context:component-scan base-package="Final.View"/>
+	<context:component-scan base-package="Final.Dao"/>
 
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
 		<property name="driverClassName" value="${jdbc.driver}"></property>
