@@ -30,6 +30,9 @@
 	<bean id="FileLoadDao" class="spring.mybatis.file.dao.FileDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
+	<bean id="MemberDao" class="spring.mybatis.file.dao.FileDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
 
 
 	<!-- 파일전송시 -->
