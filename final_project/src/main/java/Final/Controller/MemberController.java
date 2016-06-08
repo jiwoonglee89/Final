@@ -33,7 +33,7 @@ public class MemberController
 
 
 
-	@RequestMapping("/joinPage/join.do")
+	@RequestMapping("/join.do")
 	public String join()
 	{
 		

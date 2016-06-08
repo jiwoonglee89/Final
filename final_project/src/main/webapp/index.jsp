@@ -6,7 +6,8 @@
 </head>
 <body>
 
-<c:redirect url="loginPage/login.do"/>
+<%-- <c:redirect url="/joinPage/join.do"/> --%>
+<a href="join.do">이동</a>
 
 
 </body>
