@@ -35,7 +35,12 @@ public class MemberController
 	public MemberInfo memberInfo(){
 		return new MemberInfo();
 	}
-
+	
+	@RequestMapping("/loginForm.do")
+	public String login()
+	{
+		return "loginPage/loginForm";
+	}
 
 
 	@RequestMapping("/join.do")

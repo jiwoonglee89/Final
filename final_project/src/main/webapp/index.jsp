@@ -5,6 +5,6 @@
 <title></title>
 </head>
 <body>
-<c:redirect url="/login.do"/> 
+<c:redirect url="/loginForm.do"/> 
 </body>
 </html>

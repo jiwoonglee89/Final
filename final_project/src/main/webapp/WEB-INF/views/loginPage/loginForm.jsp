@@ -39,11 +39,7 @@ function check() {
 	} 
 	$("#loginForm").submit();
 }
-
 </script>
-<style>
-
-</style>
 <title>로그인</title>
 </head>
 <body>
@@ -54,17 +50,17 @@ function check() {
 	<script>alert("아이디 또는 패스워드가 일치하지 않습니다");</script>
 </c:if>
 <div id="logon">
-	<form method="post" action="/reviewer/logon/loginPro.do" name="loginFrom" id="loginForm">
+	<form method="post" action="" name="loginFrom" id="loginForm">
 		<div id="loginForm">
 			<div id="login_logo"><a href="#"><img src="../image/reviewer_gray.png" ></a></div>
 			<div id="div_id" class="size_long"><input type="text" class="text_login" id="id" name="id" placeholder="아이디" ></div>
 			<div id="div_passwd" class="size_long"><input type="password" class="text_login" id="passwd" name="passwd" placeholder="비밀번호"></div>	
-			<div id="btn_login_submit" class="btn_long"><a href="#" >로 그 인</a></div>
+			<div id="btn_login_submit" class="btn_long"><a href="" >로 그 인</a></div>
 		</div>
 	</form>
 	<div id="join_find">
-		<div id="btn_join" class="btn_long"><a href="#" >회 원 가 입</a></div>
-		<div id="btn_find" class="btn_long"><a href="#" >아이디/비밀번호 찾기</a></div>
+		<div id="btn_join" class="btn_long"><a href="../joinPage/join.do" >회 원 가 입</a></div>
+		<div id="btn_find" class="btn_long"><a href="" >아이디/비밀번호 찾기</a></div>
 	</div>
 </div>
 </body>
