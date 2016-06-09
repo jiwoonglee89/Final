@@ -46,7 +46,7 @@ public class MemberController {
 	}
 
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
-	public String join()
+	public String joinMove()
 	{
 		return "joinPage/join";
 		
