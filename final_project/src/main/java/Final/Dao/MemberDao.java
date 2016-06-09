@@ -14,4 +14,23 @@ public class MemberDao extends SqlSessionDaoSupport{
 	public int modify(MemberInfo memberInfo) {
 		return getSqlSession().update("member.modify",memberInfo);
 	}
+public String idSearch(MemberInfo memberInfo) {
+		
+		return getSqlSession().selectOne("member.idSearch", memberInfo);
+	}
+	
+	public String pwSearch (MemberInfo memberInfo) {
+		
+		return getSqlSession().selectOne("member.pwSearch", memberInfo);
+	}
+	
+	public String loginSuccess(MemberInfo memberInfo) {
+		String password = null;
+		
+		password = getSqlSession().selectOne("member.loginSucess", memberInfo);
+		
+		return password;
+	}
+	
+
 }

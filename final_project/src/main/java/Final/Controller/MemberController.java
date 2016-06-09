@@ -52,7 +52,7 @@ public class MemberController {
 		
 	}
 
-	@RequestMapping(value="/join.do", method="post")
+	@RequestMapping(value="/join.do", method=RequestMethod.POST)
 	public String join()
 	{
 		
