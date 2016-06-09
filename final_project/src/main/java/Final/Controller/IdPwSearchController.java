@@ -10,7 +10,7 @@ import Final.Dao.MemberDao;
 import Final.Model.MemberInfo;
 
 	@Controller
-	public class IdSearchController {
+	public class IdPwSearchController {
 	
 	MemberDao memberDao;
 	
