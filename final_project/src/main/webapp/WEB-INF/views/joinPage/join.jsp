@@ -1,13 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
+<script src="<c:url value="resources/join.js" />"></script>
 <title>Web Cell Join Page</title>
 </head>
 <body>
-	<form name="joinForm" action="" method="post" onSubmit="return check()">
+	<form name="joinF" action="loginForm.do" method="post" onSubmit="return check()">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -79,11 +81,11 @@
 			<tr>
 				<td width="200">*우편 번호</td>
 				<td>
-					<input type="text" name="zipcode" size="7" readonly>
+					<input type="text" name="zipcode" size="10" readonly placeholder="우편번호를 검색.">
 					<input type="button" value="우편번호찾기" onClick="zipCheck()">
-					우편번호를 검색하세요.
+					
 
-					<input type="text" name="address" size="70"> 나머지 주소를 적어 주세요.
+					<input type="text" name="address" size="50" placeholder="나머지 주소를 적어 주세요">.
 				</td>
 			</tr>
 			<tr>
