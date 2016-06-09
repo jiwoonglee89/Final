@@ -14,7 +14,7 @@
 .inputtext {
 	display: block;
 	/* overflow : inherit;  */
-	border: 0px;
+	border: 1px;
 	height: 20px;
 	width: 70px;
 	-webkit-box-sizing: border-box;
@@ -58,7 +58,7 @@ tr, td {
 			tag += '<tr id='+j+' class="divrow">'
 			/* 셀을 만들어준다. 아이디는 문자열 cell로 시작해서 th인덱스와 행번호와 합친다. */
 			for (var i = 0; i < th.length; i++) {
-				tag += '<td class="celltd" id=td'+th[i]+j+'><div id='+th[i]+j+' class="divcoll"><textarea  style="overflow:hidden" class="inputtext" id=input'+th[i]+j+'></textarea></div></td>'
+				tag += '<td class="celltd" id=td'+th[i]+j+'><div id='+th[i]+j+' class="divcoll"><textarea   class="inputtext" id=input'+th[i]+j+'></textarea></div></td>'
 			}
 			tag += '</tr>'
 		}
@@ -137,20 +137,30 @@ tr, td {
 		}); */
 	 	
 		$('td',this).click(function() {
+			$('td:not(this)').css('border-color','#BCE55C');
 			$(this).css('border-color','black');
+			$(this).sele
 		});
-		
+
 		$('div',this).dblclick(function() {
 			var idz = $(this).attr('id');
-			$('#input'+idz).show(); 
+			
+			$('#input'+idz).show();
 			$('#input'+idz).focus(); 
-		});
 		
+	/* 	$('textarea:not(#input'+idz+')').hide();  */
+		/* 	var inputt = 'textarea:not(#input'+idz+')' */
+			
+			
+		});		
 	});
 </script>
 </head>
 <body>
-
+<form>
+<input type="submit" value="함수">
+</form>
+<br>
 	<div id="createTable"></div>
 
 
