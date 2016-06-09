@@ -5,7 +5,6 @@
 <title></title>
 </head>
 <body>
-<%-- <c:redirect url="/loginForm.do"/>  --%>
-<a href="loginForm.do">loginForm</a>
+<c:redirect url="/loginForm.do"/> 
 </body>
 </html>
