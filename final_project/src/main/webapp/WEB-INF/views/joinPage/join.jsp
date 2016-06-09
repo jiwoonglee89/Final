@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +9,7 @@
 <script src="<c:url value="resources/join.js" />"></script>
 <title>Web Cell Join Page</title>
 </head>
-<body>
+<body onload="disable()">
 	<form name="joinF" action="loginForm.do" method="post" onSubmit="return check()">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
@@ -39,7 +40,7 @@
 			<tr>
 				<td width="200">*이름</td>
 				<td width="400">
-					<input type="text" name="name" maxlength="50" size="15">
+					<input type="text" name="name" maxlength="50" size="15" onblur="id_noNumber(this.form)">
 				</td>
 			</tr>
 			<tr>
@@ -60,7 +61,7 @@
 			<!-- 전화번호 유효성 검사 재프로그래밍할것 -->
 				<td width="200">*전화번호</td>
 				<td width="400">
-					<input type="text" name="Phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="20">
+					<input type="text" name="Phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="20" onKeyPress="onlyNumber()" onBlur="onlyNumber2(this)"> 
 				</td>
 			</tr>
 			<tr>
@@ -69,7 +70,7 @@
 					<input type="text" name="emailID" size="15"  maxlength="25">@
 					<input type="text" name="emailAddress" size="10" >
 					<select name=email  onchange="email_change(this.form)" >
-							<option value="0" selected="selected">이메일주소 선택</option>
+							<option value="" selected="selected">이메일주소 선택</option>
 							<option value="naver.com">naver.com</option>
 							<option value="daum.net">daum.net</option>
 							<option value="gmail.com">gmail.com</option>
