@@ -56,7 +56,7 @@ $(function(){
 			<div class="size_long" id="divid"><input type="text" class="text_login" id="id" name="id" placeholder="아이디"></div>
 			<div class="size_long" id="divphone"><input type="text" class="text_login" id="phone" name="phone" maxlength="12" placeholder="핸드폰 번호(01012345678)"></div>
 			<div class="size_long" id="divbirth"><input type="text" class="text_login" id="birth" name="birth" placeholder="생년월일"></div>
-			<div id="submit_find_pwd" class="btn_long"><a href="#">비 밀 번 호 확 인</a></div>
+			<div id="submit_find_pwd" class="btn_long"><a href="#ccc">비 밀 번 호 확 인</a></div>
 		</div>
 	</form>
 </div>

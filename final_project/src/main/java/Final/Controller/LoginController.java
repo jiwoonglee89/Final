@@ -13,12 +13,11 @@ import Final.Dao.MemberDao;
 import Final.Model.MemberInfo;
 
 @Controller
-@RequestMapping("loginForm.do")
+@RequestMapping("/loginForm.do")
 public class LoginController {
-	
+	@Autowired
 	MemberDao memberDao = new MemberDao();
 	
-	@Autowired
 	public void setMemberDao(MemberDao memberDao){
 		this.memberDao=memberDao;
 		}
@@ -26,7 +25,7 @@ public class LoginController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String form(){
 		
-		return "loginform";
+		return "loginForm";
 		
 	}
 	@RequestMapping(method = RequestMethod.POST)
