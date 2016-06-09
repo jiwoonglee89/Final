@@ -3,7 +3,6 @@ package Final.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -48,11 +47,24 @@ public class MemberController {
 	}
 	//로그인 하기
 	@RequestMapping("/login.do")
-	
-	public String loginPro(Model model,HttpServletRequest request,Sql)
+	public String loginPro(Model model,HttpServletRequest request)
 	{
-		String id = (String)request.getParameter("id");
-		session = memberDao.getMember(id);
+		String id = request.getParameter("id");
+		String pass = request.getParameter("password");
+		System.out.println(id);
+		
+		MemberInfo memberInfo = memberDao.getMember(id);
+		if (memberInfo !=null) 
+		{
+			if(memberInfo.getPassword().equals(pass))
+			{
+				HttpSession session = request.getSession();
+				session.setAttribute("id", id);
+			}
+		}
+		
+		
+		
 		return "loginPage/loginForm";
 	}
 	//회원가입 화면으로 이동 

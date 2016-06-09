@@ -14,10 +14,10 @@
 	<th colspan="2">로그인</th>
 	<tr>
 	<td>아이디</td>
-	<td><input type="text" class="text_login" id="id" name="id" placeholder="아이디" required placeholder="ID 입력"></td>
+	<td><input type="text" class="text_login" name="id" placeholder="아이디" required placeholder="ID 입력"></td>
 	<tr>
 		<td>비밀번호</td>
-		<td><input type="password" class="text_login" id="passwd" name="passwd" placeholder="비밀번호" required placeholder="Password 입력"></td>
+		<td><input type="password" class="text_login" name="password" placeholder="비밀번호" required placeholder="Password 입력"></td>
 	</tr>
 	<tr>
 		<td><input type="submit" value="로그인"></td>
