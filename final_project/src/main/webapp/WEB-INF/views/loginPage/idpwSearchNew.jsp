@@ -46,7 +46,7 @@ $(function(){
 		<div id="find_id">
 			<div class="size_long"><h1 class="title_find">아이디 찾기</h1></div>
 			<div class="size_long" id="text_phone"><input type="text" class="text_login" id="phone" name="phone" maxlength="12" placeholder="핸드폰 번호(01012345678)"></div>
-			<div id="submit_find_id" class="btn_long"><a href="#">아 이 디 확 인</a></div>
+			<div id="submit_find_id" class="btn_long"><a href="#ccc">아 이 디 확 인</a></div>
 		</div>
 	</form>
 	<br><br>

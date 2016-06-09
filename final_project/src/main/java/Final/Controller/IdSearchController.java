@@ -19,7 +19,20 @@ import Final.Model.MemberInfo;
 		this.memberDao=memberDao;
 		
 	}
+	@RequestMapping("pwSearch.do")
+	public String form1(){
+		
+		return "idpwSearchNew";
+	}
 	
+	@RequestMapping("pwSearchPro.do")
+	public String action1(MemberInfo memberInfo, Model model){
+	
+		String pw = memberDao.pwSearch(memberInfo);
+		model.addAttribute("pw", pw);
+	
+		return "pwSearch";
+	}
 	@RequestMapping("idSearch.do")
 	public String form(){
 		return"idpwSearchNew";
