@@ -6,7 +6,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="one" parameterType="String" resultType="Final.Model.MemberInfo">
 		select * from member where id=#{id}
 	</select>
-	
+	<select parameterType="Final.Model.MemberInfo" id="idSearch">
+		select id from member where name=#{name}, phone=#{phone} 
+	</select>
+	<select parameterType="Final.Model.MemberInfo" id="pwSearch">
+		select password from member where id=#{id}, phone=#{phone}, birth=#{birth} 
+	</select>
+	<select parameterType="Final.Model.MemberInfo" id="loginSuccess">
+		select password from member where id=#{id}
+	</select>
 	<update id="modify" parameterType="Final.Model.MemberInfo">
 		update member set password=#{password}, name=#{name},birth=#{birth},phone=#{phone},email=#{email},	zipcode=#{zipcode},address=#{address} where id=#{id}
 	</update>
