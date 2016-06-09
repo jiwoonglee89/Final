@@ -48,7 +48,7 @@ public class MemberController
 	{
 		
 		
-		return "join";
+		return "joinPage/join";
 	}
 	
 

@@ -59,7 +59,7 @@ function check() {
 		</div>
 	</form>
 	<div id="join_find">
-		<div id="btn_join" class="btn_long"><a href="../joinPage/join.do" >회 원 가 입</a></div>
+		<div id="btn_join" class="btn_long"><a href="join.do" >회 원 가 입</a></div>
 		<div id="btn_find" class="btn_long"><a href="" >아이디/비밀번호 찾기</a></div>
 	</div>
 </div>

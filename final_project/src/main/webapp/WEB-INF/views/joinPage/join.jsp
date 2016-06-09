@@ -8,11 +8,11 @@
 </head>
 <body>
 	<form name="joinForm" action="" method="post" onSubmit="return check()">
-		<font color="red" align="right">[*표시는 필수 입력 사항입니다.]</font>
+		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
 				<td colspan="2" height="39" align="center" bgcolor="">
-				<font size="+1"><b>Web cell 회원가입 </b></font></td>
+				<font size="+1"><b>Web cell 회원가입 </b></font><br><font color="red" align="right" size="-1">[*표시는 필수 입력 사항입니다.]</font></td>
 			</tr>
 			<tr>
 				<td width="200">*아이디</td>
@@ -37,7 +37,7 @@
 			<tr>
 				<td width="200">*이름</td>
 				<td width="400">
-					<input type="text" name="name" maxlength="50" size="55">
+					<input type="text" name="name" maxlength="50" size="15">
 				</td>
 			</tr>
 			<tr>
@@ -58,7 +58,7 @@
 			<!-- 전화번호 유효성 검사 재프로그래밍할것 -->
 				<td width="200">*전화번호</td>
 				<td width="400">
-					<input type="text" name="Phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="15">
+					<input type="text" name="Phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="20">
 				</td>
 			</tr>
 			<tr>
