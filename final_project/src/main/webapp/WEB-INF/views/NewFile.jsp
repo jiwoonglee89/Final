@@ -4,6 +4,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>Insert title here</title>
+<script>
+    // html dom 이 다 로딩된 후 실행된다.
+    $(document).ready(function(){
+        $(".menu>a").click(function(){
+            $(this).next("ul").toggleClass("hide");
+        });
+    });
+</script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
 <style type="text/css">
 .divcoll {
@@ -150,10 +158,36 @@ tr, td {
 </script>
 </head>
 <body>
-
+<div>
+    <ul>
+        <li class="menu">
+            <a><img src="" alt="상위메뉴이미지1"/></a>
+            <ul class="hide">
+                <li>메뉴1-1</li>
+                <li>메뉴1-2</li>
+                <li>메뉴1-3</li>
+                <li>메뉴1-4</li>
+                <li>메뉴1-5</li>
+                <li>메뉴1-6</li>
+            </ul>
+        </li>
+ 
+        <li class="menu">
+            <a><img src="" alt="상위메뉴이미지2"/></a>
+            <ul class="hide">
+                <li>메뉴2-1</li>
+                <li>메뉴2-2</li>
+                <li>메뉴2-3</li>
+                <li>메뉴2-4</li>
+                <li>메뉴2-5</li>
+                <li>메뉴2-6</li>
+            </ul>
+        </li>
+    </ul>
+</div>
 	<div id="createTable"></div>
-
 
 </body>
 </html>
+
 
