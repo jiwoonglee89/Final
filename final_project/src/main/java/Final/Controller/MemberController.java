@@ -3,6 +3,7 @@ package Final.Controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.mybatis.spring.support.SqlSessionDaoSupport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -34,7 +35,8 @@ public class MemberController {
 	public MemberInfo memberInfo() {
 		return new MemberInfo();
 	}
-
+	
+	//로그인 화면 이동(id 존재여부에따라 view 나뉨)
 	@RequestMapping("/loginForm.do")
 	public String login(Model model, HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -44,26 +46,33 @@ public class MemberController {
 
 		return "loginPage/loginForm";
 	}
-
+	//로그인 하기
+	@RequestMapping("/login.do")
+	
+	public String loginPro(Model model,HttpServletRequest request,Sql)
+	{
+		String id = (String)request.getParameter("id");
+		session = memberDao.getMember(id);
+		return "loginPage/loginForm";
+	}
+	//회원가입 화면으로 이동 
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinMove()
 	{
 		return "joinPage/join";
-		
 	}
-
+	//회원가입 후 메인으로 이동
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
 	public String join()
 	{
-		
 		return "joinPage/loginForm";
 	}
-
+	//아이디와비밀번호 찾는 화면으로 이동
 	@RequestMapping("/idpwSearchNew.do")
 	public String idpwSearchNew() {
 		return "loginPage/idpwSearchNew";
 	}
-
+	//아이디 중복화면 관련 
 	@RequestMapping("/confirmId.do")
 	public String confirmID(Model model, HttpServletRequest request) {
 		System.out.println(request.getRequestURL());
@@ -86,7 +95,7 @@ public class MemberController {
 		model.addAttribute("check", check);
 		return "joinPage/confirmId";
 	}
-
+	//회원 정보 수정 화면 이동
 	@RequestMapping("/modifyForm.do")
 	public ModelAndView modifyForm(HttpServletRequest request) {
 		HttpSession session = request.getSession();
@@ -99,7 +108,7 @@ public class MemberController {
 
 		return mav;
 	}
-
+	//회원 정보 수정 완료후 마이페이지 이동
 	@RequestMapping("/modify.do")
 	public String modify(@ModelAttribute("memberInfo") MemberInfo memberInfo) {
 
@@ -110,7 +119,7 @@ public class MemberController {
 		}
 		return "login";
 	}
-
+	//회원 탈퇴
 	@RequestMapping("/delete.do")
 	public String delete(String title) {
 		int success = fileLoadDao.delete(title);
@@ -121,7 +130,7 @@ public class MemberController {
 
 		return "";
 	}
-
+	//로그아웃
 	@RequestMapping("/logout.do")
 	public String logout(HttpServletRequest request) {
 		HttpSession session = request.getSession();

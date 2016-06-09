@@ -8,7 +8,7 @@
 </head>
 <body>
 <c:if test="${id == null}">
-	<form method="post" action="" name="loginFrom">
+	<form method="post" action="login.do" name="loginFrom">
 	<center>
 	<table width="260" cellpadding="0" cellspacing="0" align="center" border="1">
 	<th colspan="2">로그인</th>
