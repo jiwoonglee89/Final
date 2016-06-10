@@ -23,10 +23,19 @@ public class ExcelController {
 
 	@RequestMapping("/newExcel.do")
 	public String form() {
-		return "excel";
+		return "NewFile";
 	}
 
 	@RequestMapping("/existExcel.do")
+	public ModelAndView existExcel(String title) throws FileNotFoundException {
+
+		
+		FileInputStream fis = new FileInputStream("C:/Users/wonmo/Desktop/123.xls");
+
+		return new ModelAndView("uploadExcelView", "fis", fis);
+	}
+	
+	/*@RequestMapping("/existExcel.do")
 	public ModelAndView existExcel(String title) throws FileNotFoundException {
 
 		FileInfo fileInfo = fileLoadDao.path(title);
@@ -39,6 +48,6 @@ public class ExcelController {
 		}
 
 		return new ModelAndView("uploadExcelView", "fis", fis);
-	}
+	}*/
 
 }

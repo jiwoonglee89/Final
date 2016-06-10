@@ -177,7 +177,7 @@ tr, td {
 
  	<script type="text/javascript">
     $(document).ready(function () {
-        $("#btnExport").click(function () {
+        $("#btnExport").click(function (e) {
             $("#viewtable").battatech_excelexport({
                 containerid: "viewtable"
                , datatype: 'table'

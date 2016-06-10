@@ -5,6 +5,7 @@
 <title></title>
 </head>
 <body>
-<c:redirect url="/loginForm.do"/> 
+<%-- <c:redirect url="/newExcel.do"/> --%> 
+<a href="existExcel.do">existExcel.do</a>
 </body>
 </html>
