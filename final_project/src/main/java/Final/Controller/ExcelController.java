@@ -21,7 +21,7 @@ public class ExcelController {
 		this.fileLoadDao = fileLoadDao;
 	}
 
-	@RequestMapping
+	@RequestMapping("/newExcel.do")
 	public String form() {
 		return "excel";
 	}
