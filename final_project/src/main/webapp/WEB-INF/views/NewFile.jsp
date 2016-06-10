@@ -13,6 +13,7 @@
     });
 </script>
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="js/jquery.battatech.excelexport.js"></script>
 <style type="text/css">
 .divcoll {
 	height: 20px;
@@ -171,7 +172,19 @@ tr, td {
 </form>
 <br>
 	<div id="createTable"></div>
+	
+	<button id="btnExport" type="button" >저장</button>
 
+ 	<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnExport").click(function () {
+            $("#viewtable").battatech_excelexport({
+                containerid: "viewtable"
+               , datatype: 'table'
+            });
+        });
+    });
+    </script>
 </body>
 </html>
 

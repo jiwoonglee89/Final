@@ -7,6 +7,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from file_data where id=${id} order by modify_date desc
 	</select>
 	
+	<select id="selByTitle" parameterType="String" resultType="Final.Model.FileInfo">
+		select * from file_data where title=#{title}
+	</select>
+	
 	<delete id="delete" parameterType="String">
 		delete from file_data where title=#{title}
 	</delete>

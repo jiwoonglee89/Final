@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>우편번호 검색</title>
-<script src="zipcheck.js"></script>
+<script src="<c:url value="resources/zipcheck.js" />"></script>
 </head>
 <body>
 <center>
