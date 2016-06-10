@@ -1,8 +1,11 @@
 package Final.Dao;
 
+import java.util.List;
+
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
 import Final.Model.MemberInfo;
+import Final.Model.Zipcode;
 
 public class MemberDao extends SqlSessionDaoSupport{
 
@@ -31,6 +34,9 @@ public String idSearch(MemberInfo memberInfo) {
 		
 		return password;
 	}
-	
+	public List zipcodeSerach(Zipcode zipCode)
+	{
+		return getSqlSession().selectList("member.zipcodeSerach",zipCode);
+	}
 
 }
