@@ -16,4 +16,8 @@ public class FileLoadDao extends SqlSessionDaoSupport{
 	public int delete(String title) {
 		return getSqlSession().delete("file.delete", title);
 	}
+
+	public FileInfo path(String title) {
+		return getSqlSession().selectOne("file.selByTitle", title);
+	}
 }
