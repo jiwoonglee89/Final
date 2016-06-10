@@ -141,9 +141,5 @@ function zipCheck() {
 
 	url = "/final_project/joinPage/zipCheck.do?check=y";
 
-	window
-	.open(
-			url,
-			"post",
-	"toolbar=no ,width=500 ,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
+	window.open(url,"post","toolbar=no ,width=500 ,height=300,directories=no,status=yes,scrollbars=yes,menubar=no");
 }

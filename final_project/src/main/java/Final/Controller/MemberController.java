@@ -62,11 +62,16 @@ public class MemberController {
 				session.setAttribute("id", id);
 			}
 		}
-		
-		
-		
 		return "loginPage/loginForm";
 	}
+	@RequestMapping("zipCheck.do")
+	public String zipcheck()
+	{
+		return "joinPage/zipCheck";
+	}
+	
+	
+	
 	//회원가입 화면으로 이동 
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinMove()
@@ -149,6 +154,6 @@ public class MemberController {
 		if (session != null) {
 			session.invalidate();
 		}
-		return "login";
+		return "loginPage/loginForm";
 	}
 }
