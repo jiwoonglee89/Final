@@ -58,7 +58,7 @@ tr, td {
 }
 </style>
 <script>
-	function key_enterDown() {
+	function key_event() {
 		if (event.keyCode == 13) {
 			event.preventDefault();
 			var numtdid = $('.tdselect').attr('id').substring(3, 6);
@@ -73,26 +73,70 @@ tr, td {
 			$('#address').val(stringid.substring(2, 6));
 		}
 		//오른쪽 방향키
-		/* if(event.keyCode == 39){
+		 if(event.keyCode == 39){
+			 
+		
+			 var colltdid = $('.tdselect').attr('id').substring(2, 3);
+			var rowtdid = $('.tdselect').attr('id').substring(3,6);	
+			 var th = [ "", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+							"L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+							"X", "Y", "Z" ];
+			var or_row_tdid= th.indexOf(colltdid)+1;
+		 	var re_row_tdid = th[or_row_tdid];
+			var id = 'td'+re_row_tdid+rowtdid;
+	
+			 $('.tdselect').attr('class','celltd'); 
 			 $('.textselect').attr('class','divcoll').attr('contentEditable','false'); 
-			 var numtdid = $('.tdselect').attr('id').substring(0, 3);
-			 $('.tdselect').attr('class','celltd');
-			 var sum =numtdid+ 1;
-			alert(sum);
-			
-		} */
+		 	$('#'+id).attr('class','tdselect');
+			$('.tdselect > .divcoll').attr('class', 'textselect').attr(
+					'contentEditable', 'true').focus();
+			$('#address').val(id.substring(2, 6)); 
+		} 
 		//왼쪽방향키
 		if(event.keyCode==37){
 			
+			 var colltdid = $('.tdselect').attr('id').substring(2, 3);
+				var rowtdid = $('.tdselect').attr('id').substring(3,6);	
+				 var th = [ "", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K",
+								"L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W",
+								"X", "Y", "Z" ];
+				var or_row_tdid= th.indexOf(colltdid)-1;
+			 	var re_row_tdid = th[or_row_tdid];
+				var id = 'td'+re_row_tdid+rowtdid;
+		
+				 $('.tdselect').attr('class','celltd'); 
+				 $('.textselect').attr('class','divcoll').attr('contentEditable','false'); 
+			 	$('#'+id).attr('class','tdselect');
+				$('.tdselect > .divcoll').attr('class', 'textselect').attr(
+						'contentEditable', 'true').focus();
+				$('#address').val(id.substring(2, 6)); 
 		}
 		//위쪽 방향키
 		if(event.keyCode==38){
-			
+			var numtdid = $('.tdselect').attr('id').substring(3, 6);
+			var sum = Number(numtdid) - 1;
+			var stringid = $('.tdselect').attr('id').substring(0, 3) + sum;
+			$('.tdselect').attr('class', 'celltd');
+			$('.textselect').attr('class', 'divcoll').attr('contentEditable',
+					'false');
+			$('#' + stringid).attr('class', 'tdselect');
+			$('.tdselect > .divcoll').attr('class', 'textselect').attr(
+					'contentEditable', 'true').focus();
+			$('#address').val(stringid.substring(2, 6));
 		}
 		//아래쪽 방향키
 		if(event.keyCode==40){
-			
-		}
+			var numtdid = $('.tdselect').attr('id').substring(3, 6);
+			var sum = Number(numtdid) + 1;
+			var stringid = $('.tdselect').attr('id').substring(0, 3) + sum;
+			$('.tdselect').attr('class', 'celltd');
+			$('.textselect').attr('class', 'divcoll').attr('contentEditable',
+					'false');
+			$('#' + stringid).attr('class', 'tdselect');
+			$('.tdselect > .divcoll').attr('class', 'textselect').attr(
+					'contentEditable', 'true').focus();
+			$('#address').val(stringid.substring(2, 6));
+			}
 	};
 
 	function CreateTable() {
@@ -117,7 +161,7 @@ tr, td {
 				tag += '<td   class="celltd" id=td'+th[i]+j+'><div   contentEditable="false" id='
 						+ th[i]
 						+ j
-						+ ' onkeyDown="key_enterDown()" class="divcoll" ></div></td>'
+						+ ' onkeyDown="key_event()" class="divcoll" ></div></td>'
 			}
 			tag += '</tr>'
 		}
@@ -215,4 +259,3 @@ tr, td {
 	</script>
 </body>
 </html>
-
