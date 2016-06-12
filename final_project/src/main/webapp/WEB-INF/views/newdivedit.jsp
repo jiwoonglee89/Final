@@ -59,6 +59,7 @@ tr, td {
 </style>
 <script>
 	function key_event() {
+		//엔터
 		if (event.keyCode == 13) {
 			event.preventDefault();
 			var numtdid = $('.tdselect').attr('id').substring(3, 6);
