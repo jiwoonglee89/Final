@@ -72,6 +72,7 @@ tr, td {
 					'contentEditable', 'true').focus();
 			$('#address').val(stringid.substring(2, 6));
 		}
+		//오른쪽 방향키
 		/* if(event.keyCode == 39){
 			 $('.textselect').attr('class','divcoll').attr('contentEditable','false'); 
 			 var numtdid = $('.tdselect').attr('id').substring(0, 3);
@@ -80,6 +81,18 @@ tr, td {
 			alert(sum);
 			
 		} */
+		//왼쪽방향키
+		if(event.keyCode==37){
+			
+		}
+		//위쪽 방향키
+		if(event.keyCode==38){
+			
+		}
+		//아래쪽 방향키
+		if(event.keyCode==40){
+			
+		}
 	};
 
 	function CreateTable() {
