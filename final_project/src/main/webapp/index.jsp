@@ -4,9 +4,8 @@
 <head>
 <title></title>
 </head>
-<body><%-- 
-<c:redirect url="/loginForm.do"/>  --%>
-
+<body>
+<c:redirect url="/loginForm.do"/>
 <a href="loginFrom.do">new</a>
 </body>
 </html>

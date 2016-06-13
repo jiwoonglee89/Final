@@ -6,11 +6,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="one" parameterType="String" resultType="Final.Model.MemberInfo">
 		select * from member where id=#{id}
 	</select>
-	<select parameterType="Final.Model.MemberInfo" id="idSearch">
-		select id from member where name=#{name}, phone=#{phone} 
+	<select parameterType="Final.Model.MemberInfo" id="idSearch" resultType = "String">
+		select id from member where name=#{name} and phone=#{phone} 
 	</select>
-	<select parameterType="Final.Model.MemberInfo" id="pwSearch">
-		select password from member where id=#{id}, phone=#{phone}, birth=#{birth} 
+	<select parameterType="Final.Model.MemberInfo" id="pwSearch" resultType = "String">
+		select password from member where id=#{id} and phone=#{phone} and birth=#{birth} 
 	</select>
 	<select parameterType="Final.Model.MemberInfo" id="loginSuccess">
 		select password from member where id=#{id}

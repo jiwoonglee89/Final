@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="UTF-8"%>
 <%@ page trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ page isELIgnored="false" %>
 <html>
 <head>
 <title>비밀번호 찾기</title>
@@ -16,7 +16,7 @@
 </c:if>
 <c:if test="${message!=null}">
 	<script>
-		alert("일치하는 정보가 없습니다");
+		alert("비밀번호를 확인해 주세요.");
 		history.go(-1);
 	</script>
 </c:if>
