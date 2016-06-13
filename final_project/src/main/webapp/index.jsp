@@ -7,6 +7,6 @@
 <body><%-- 
 <c:redirect url="/loginForm.do"/>  --%>
 
-<a href="newExcel.do">new</a>
+<a href="loginFrom.do">new</a>
 </body>
 </html>
