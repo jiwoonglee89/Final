@@ -64,9 +64,20 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
-	@RequestMapping("zipCheck.do")
+	
+	
+	//주소록 검색 화면으로 이동
+	@RequestMapping(value="/zipCheck.do",method=RequestMethod.GET)
 	public String zipcheck()
 	{
+		
+		return "joinPage/zipCheck";
+	}
+	//DB에서 검색된 값 가져와서 표시
+	@RequestMapping(value="/zipCheck.do",method=RequestMethod.POST)
+	public String zipcheckPro()
+	{
+		
 		return "joinPage/zipCheck";
 	}
 	

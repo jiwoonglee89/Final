@@ -19,4 +19,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		update member set password=#{password}, name=#{name},birth=#{birth},phone=#{phone},email=#{email},	zipcode=#{zipcode},address=#{address} where id=#{id}
 	</update>
 	
+	<select id="zipcodeSerach" parameterType="String" resultType="Final.Model.Zipcode">
+		select * from zipcode where area4=#{area4} 
+	</select>
 </mapper>
