@@ -4,7 +4,9 @@
 <head>
 <title></title>
 </head>
-<body>
-<c:redirect url="/loginForm.do"/> 
+<body><%-- 
+<c:redirect url="/loginForm.do"/>  --%>
+
+<a href="newExcel.do">new</a>
 </body>
 </html>
