@@ -4,9 +4,10 @@
 <%@ page isELIgnored="false" %>
 <html>
 <head>
+<meta charset="UTF-8">
+<script src="<c:url value="resources/join.js" />"></script>
 <title>아이디 비밀번호 찾기</title>
 <script>
-
 $(function(){
    open(url,"confirm","toolbar=no,location=no,status=no,menubar=no,scrollbars=no,resizable=no,width=300,height=200");
    $("#submit_find_id").click(function(){
@@ -23,6 +24,24 @@ $(function(){
       }
    });
 }
+	$("#submit_find_password").click(function(){
+		if($("#id").val()=="") {
+			alert("아이디를 입력해 주세요.");
+			$("#id").focus();
+	} else{
+		if($("#phone").val()=="") {
+			alert("핸드폰 번호를 입력해 주세요.");
+			$("#phone").focus();
+	} else {
+		if($("#birth").val()=="") {
+			alert("생년원일을 입력해 주세요.");
+			$("#birth").focus();
+		}
+	} else {
+			$("#pwSearch").submit();
+		}
+	});
+
    $("#submit_find_password").click(function(){
       if($("#id").val()=="") {
          alert("아이디를 입력해 주세요.");
@@ -40,6 +59,7 @@ $(function(){
          $("#pwSearch").submit();
       }
    });
+
 });
 </script>
 </head>
@@ -54,6 +74,43 @@ $(function(){
    </c:if>
 </c:if>
 <div id="find">
+
+	<form  name="idSearch" id="idSearch" >
+	<table width="300" border="1" cellspacing="0" cellpadding="3" align="center">
+	<tr>
+		<td colspan="2" height="39" align="center" bgcolor="">
+		<font size="+1"><b>아이디 찾기 </b></font><br><font color="black" align="right" size="-1"></font>
+		</td>
+	</tr>
+	<tr>
+				<td colspan="2" height="39" align="center" bgcolor="" width="300" width="300">
+					<div id="find_id"></div>
+					<div class="size_long" id="divname"><input type="text" class="text_login" id="name" name="name" maxlength="12" placeholder="이름"></div>
+					<div class="size_long" id="divphone"><input type="text" class="text_login" id="phone" name="phone" maxlength="12" placeholder="핸드폰번호(01012345678)"></div>
+					<input id="submit_find_id" class="btn_long" type="button" name="confirm_id" value="아이디 확인" OnClick="javascript:window.location='idSearch.do'">
+				</td>
+			</tr>
+		</table>
+	</form>
+	<form action="pwSearch.do" method="post" name="pwSearch" id="pwSearch">
+		<table width="300" border="1" cellspacing="0" cellpadding="3" align="center">
+		<tr>
+			<td colspan="2" height="39" align="center" bgcolor="">
+			<font size="+1"><b>비밀번호 찾기</b></font><br><font color="black" align="right" size="-1"></font>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2" height="39" align="center" bgcolor="" width="300">
+				<div id="find_password"></div>
+				<div class="size_long" id="divid"><input type="text" class="text_login" id="id" name="id" maxlength="12" placeholder="아이디"></div>
+				<div class="size_long" id="divphone"><input type="text" class="text_login" id="phone" name="phone" maxlength="12" placeholder="핸드폰 번호(01012345678)"></div>
+				<div class="size_long" id="divbirth"><input type="text" class="text_login" id="birth" name="birth" maxlength="12" placeholder="생년월일"></div>
+				<input id="submit_find_pwd" class="btn_long" type="button" name="confirm_id" value="비밀번호 확인" OnClick="openConfirmid()">
+				<input type="hidden" name="confirm_ok" value="no">
+			</td>
+			</tr>
+		</table>
+	</form>
    <form action="idSearch.do" method="post" name="idSearch" id="idSearch" >
    <table width="300" border="1" cellspacing="0" cellpadding="3" align="center">
    <tr>

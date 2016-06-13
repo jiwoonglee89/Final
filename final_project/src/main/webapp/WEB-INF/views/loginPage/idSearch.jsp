@@ -7,6 +7,8 @@
 <title>아이디 찾기</title>
 </head>
 <body>
+<form>
+<input type="hidden" name="confirm_ok"  value="no">
 <c:if test="${message==null}">
 	<div id="find_id_result">
 		<div class="size_long"><h1 class="title_find">아이디 찾기</h1></div>
@@ -21,5 +23,6 @@
 		history.go(-1);
 	</script>
 </c:if>
+</form>
 </body>
 </html>
