@@ -152,30 +152,29 @@ public class ExcelController {
 		
 		
 		File file = new File("C:/Users/wonmo/Desktop/123.txt");
-		
+		//¼öÁ¤ÇÊ
 		try {
 			String value = null;
 			char i = 64;
 			int j =1;
 			BufferedReader br = new BufferedReader(new FileReader(file));
 			
-			List list = new ArrayList();
-			list.add(br.read());
-			System.out.println("list.size()::"+list.size());
-			for (int colLine = 0; colLine < list.size(); colLine++) {
-				if (br.readLine() != null) {
-					value= br.readLine();
+			String s ; 
+			for (int colLine = 0; colLine < 40; colLine++) {
+				if ((s = br.readLine()) != null) {
+					value= s;
 					i = (char)(i+1);
-				}/*if else (br.readLine()!= -1 || ){
+				}else if(br.read()!= -1 || br.readLine() == null){
 					j = j+1;
-				}*/
+					i = 64;
+				}
 				String colName = i+""+j;
 				
 				Map map = new HashMap();
 				map.put(colName, value);
 				
-				System.out.println(colName);
-				System.out.println(value);
+				System.out.println("colName::"+colName);
+				System.out.println("value::"+value);
 				
 
 				mav.addObject("map", map);
