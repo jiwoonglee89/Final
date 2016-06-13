@@ -18,6 +18,7 @@ repositories {
 }
 
 dependencies {
+	compile group: 'org.apache.poi', name: 'poi-ooxml', version: '3.9'
 	compile group: 'org.apache.poi', name: 'poi', version: '3.13'
 	compile files('libs/ojdbc6.jar')
 	compile group: 'org.springframework', name: 'spring-orm', version: '4.2.5.RELEASE'
