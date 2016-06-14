@@ -38,5 +38,9 @@ public String idSearch(MemberInfo memberInfo) {
 	{
 		return getSqlSession().insert("member.insert", memberInfo);
 	}
+public MemberInfo modifyForm(String id){
+		
+		return getSqlSession().selectOne("member.modifyForm",id);
+	}
 
 }

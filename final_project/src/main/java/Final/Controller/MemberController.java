@@ -126,7 +126,7 @@ public class MemberController {
 		String id = (String) session.getAttribute("id");
 
 		ModelAndView mav = new ModelAndView("modifyForm");
-		MemberInfo member = memberDao.getMember(id);
+		MemberInfo member = memberDao.modifyForm(id);
 
 		mav.addObject("memberInfo", member);
 

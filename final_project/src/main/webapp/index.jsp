@@ -7,5 +7,7 @@
 <body>
 <c:redirect url="/loginForm.do"/>
 <a href="loginFrom.do">new</a>
+<br>
+<a href="modifyForm.do">modify</a>
 </body>
 </html>
