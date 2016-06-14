@@ -18,10 +18,15 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<update id="modify" parameterType="Final.Model.MemberInfo">
 		update member set password=#{password}, name=#{name},birth=#{birth},phone=#{phone},email=#{email},	zipcode=#{zipcode},address=#{address} where id=#{id}
 	</update>
+<<<<<<< HEAD
 	<select resultType="Final.Model.MemberInfo" parameterType="String" id="modifyForm">
 		select * from member where id=#{id}
 	</select>
 	<insert id="insert" parameterType="Final.Model.MemberInfo">
 		insert into member values(id=#{id},password=#{password},name=#{name},birth=#{birth},phone=#{phone},email=#{email},zipcode=#{zipcode},address=#{address})
+=======
+	<insert id="insert" parameterType="Map">
+		insert into member(id, password, name, birth, phone, email, zipcode, address) values(#{id}, #{password}, #{name}, #{birth}, #{phone}, #{email}, #{zipcode}, #{address})
+>>>>>>> branch 'master' of https://github.com/jiwoonglee89/Final.git
 	</insert>
 </mapper>

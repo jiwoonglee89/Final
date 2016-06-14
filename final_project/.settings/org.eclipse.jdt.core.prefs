@@ -1,5 +1,9 @@
 #
+<<<<<<< HEAD
 #Tue Jun 14 19:39:23 KST 2016
+=======
+#Tue Jun 14 18:51:30 KST 2016
+>>>>>>> branch 'master' of https://github.com/jiwoonglee89/Final.git
 org.eclipse.jdt.core.compiler.debug.localVariable=generate
 org.eclipse.jdt.core.compiler.compliance=1.5
 org.eclipse.jdt.core.compiler.codegen.unusedLocal=preserve
