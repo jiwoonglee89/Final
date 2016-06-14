@@ -175,4 +175,19 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
+	//우편검색화면으로 이동
+	@RequestMapping(value="/zipcode.do", method=RequestMethod.GET)
+	public String moveZipView()
+	{
+		return "joinPage/zipcode";
+	}
+	//우편번호 검색
+	@RequestMapping(value="/zipcode.do", method=RequestMethod.POST)
+	public String zipcodePro(HttpServletRequest request, Model model)
+	{
+		String area4 = request.getParameter("area4");
+		//ZipcodeDao zipcodeDao = zipcodeDao.zipcodeSerach();
+		
+		return "joinPage/zipcode";
+	}
 }

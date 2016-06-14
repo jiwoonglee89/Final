@@ -108,15 +108,19 @@ function email_change(e) {
 	var s = e.email;
 	var tb = e.emailAddress;
 
-	if (s.value == "") {
+	if (!s.value) 
+	{
 		tb.disabled = true;
-		
 	}
-	if (s.value == "1") {
+	if (s.value == "1") 
+	{
 		tb.disabled = false;
 		tb.value = "";
 		tb.focus();
-	} else {
+	} 
+	else 
+	{
+		tb.disabled = true;
 		tb.value = s.value;
 	}
 }

@@ -1,6 +1,3 @@
-/**
- * 
- */
 function dongCheck() {
 		if (!document.zipForm.area4.value) 
 		{
