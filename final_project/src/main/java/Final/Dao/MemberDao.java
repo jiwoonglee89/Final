@@ -34,9 +34,5 @@ public String idSearch(MemberInfo memberInfo) {
 		
 		return password;
 	}
-	public List zipcodeSerach(Zipcode zipCode)
-	{
-		return getSqlSession().selectList("member.zipcodeSerach",zipCode);
-	}
 
 }
