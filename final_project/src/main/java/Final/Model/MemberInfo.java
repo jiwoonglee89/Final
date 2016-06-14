@@ -1,10 +1,12 @@
 package Final.Model;
 
+import java.util.Date;
+
 public class MemberInfo {
 	private String id;
 	private String password;
 	private String name;
-	private int birth;
+	private Date birth;
 	private String phone;
 	private String email;
 	private int zipcode;
@@ -28,10 +30,10 @@ public class MemberInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public int getBirth() {
+	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(int birth) {
+	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
 	public String getPhone() {

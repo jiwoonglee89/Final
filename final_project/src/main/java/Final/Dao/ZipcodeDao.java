@@ -8,9 +8,9 @@ import Final.Model.Zipcode;
 
 public class ZipcodeDao extends SqlSessionDaoSupport
 {
-	public List zipcodeSerach(Zipcode zipCode)
+	public List<ZipcodeDao> zipcodeSerach(String area4)
 	{
-		return getSqlSession().selectList("zipcode.zipcodeSerach",zipCode);
+		return getSqlSession().selectList("zipcode.zipcodeSerach",area4);
 	}
 
 }

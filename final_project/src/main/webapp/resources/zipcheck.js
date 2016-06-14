@@ -1,11 +1,12 @@
 function dongCheck() {
 		if (!document.zipForm.area4.value) 
 		{
-			alert("동이름을 입력하세요");
+			alert("검색어를 입력하세요!");
 			document.zipForm.area4.focus();
 			return false;
 		}
 		document.zipForm.submit();
+		//return true;
 	}
 
 function sendAddress(zipcode, area1, area2, area3, area4) {

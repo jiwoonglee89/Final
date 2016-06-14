@@ -1,5 +1,7 @@
 package Final.Controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -72,20 +74,7 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
-	//주소록 검색 화면으로 이동
-	@RequestMapping(value="/zipCheck.do",method=RequestMethod.GET)
-	public String zipcheck()
-	{
-		
-		return "joinPage/zipCheck";
-	}
-	//DB에서 검색된 값 가져와서 표시
-	@RequestMapping(value="/zipCheck.do",method=RequestMethod.POST)
-	public String zipcheckPro()
-	{
-		
-		return "joinPage/zipCheck";
-	}
+
 	//회원가입 화면으로 이동 
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinMove()
@@ -170,14 +159,20 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
+	@RequestMapping(value="/zipCheck.do", method=RequestMethod.GET)
+	public String zipcodeMove()
+	{
+		return "joinPage/zipCheck";
+	}
 	//우편번호 검색(우편번호 검색화면은 JSP에서 처리함)
 	@RequestMapping(value="/zipCheck.do", method=RequestMethod.POST)
-	public String zipcodePro(HttpServletRequest request, Model model)
+	public String zipcodePro(Model model,String area4)
 	{
-		String area4 = request.getParameter("area4");
-		System.out.println("텍스트박스에 입력된 값: : :"+area4+"입니다.");
-		//ZipcodeDao zipcodeDao = zipcodeDao.zipcodeSerach();
-		
-		return "joinPage/zipcode";
+		List<ZipcodeDao> zipcodeDaoList = zipcodeDao.zipcodeSerach(area4);
+		System.out.println(zipcodeDaoList.size());
+		String check = "n";
+		model.addAttribute("zipcode", zipcodeDaoList);
+		model.addAttribute("check",check);
+		return "joinPage/zipCheck";
 	}
 }

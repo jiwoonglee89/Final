@@ -1,6 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"  pageEncoding="UTF-8"%>
-<%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page isELIgnored="false" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,50 +11,44 @@
 </head>
 <body>
 <center>
-	<b>우편번호 찾기</b>
-	<table>
-		<form name="zipForm" method="post" action="zipCheck.do">
+<b>우편번호 찾기</b>
+<form name="zipForm" method="post" action="zipCheck.do">
+<table>
+	<tr>
+		<td>
+			<br> 
+			도로명 주소 입력 : 
+			<input name="area4" type="text">
+			<input type="button" value="검색" onclick="dongCheck()">
+		</td>
+	</tr>
+	<input type="hidden" name="check" value="n">
+</form>
+<c:if test="${check == 'n'}">
+	<c:if test="${ zipcode == null}">
+		<tr>
+			<td align="center"><br>검색된 결과가 없습니다.</td>
+		</tr>
+	</c:if>
+	<c:if test="${ zipcode != null}">
+		<tr>
+			<td align="center"><br> ※검색 후, 아래 우편번호를 클릭하면 자동으로 입력됩니다.<br>(Ctrl+F를 눌러 찾는 주소를 검색하세요.)</td>
+		</tr>
 		<tr>
 			<td>
-				<br> 
-				도로명 주소 입력 : <input name="area4"  type="text">
-				<input type="button" value="검색" onclick="dongCheck()">
+				<c:forEach var="zip" items="${zipcode}">
+					<a href="javascript:sendAddress('${zip.zipcode }','${zip.area1}','${zip.area2}','${zip.area3}','${zip.area4}')">
+						${zip.zipcode }&nbsp;${zip.area1}&nbsp;${zip.area2}&nbsp;${zip.area3}&nbsp;${zip.area4}<br>
+					</a>
+				</c:forEach>
 			</td>
 		</tr>
-		<input type="hidden" name="check" value="n">
-		</form>
-		<c:if test ="${check == 'n'}" >
-			<c:if test="${ zipcode == null}">
-			<tr>
-				<td align="center"><br>검색된 결과가 없습니다.</td>
-			</tr>
-			</c:if>
-			<<c:if test="${ zipcode != null}">
-			<tr>
-			<td align="center">
-				<br> ※검색 후, 아래 우편번호를 클릭하면 자동으로 입력됩니다.
-			</td>
-		</tr>
-		<tr>
-			<td>
-			
-<c:forEach var="zip" items="${zipcode}">
-<a href="javascript:sendAddress('${zip.zipcode }','${zip.area1}','${zip.area2}','${zip.area3}','${zip.area4}')">
-
-${zip.zipcode }&nbsp;${zip.area1}&nbsp;${zip.area2}&nbsp;${zip.area3}&nbsp;${zip.area4}<br>
-</a>
-
-</c:forEach>
-</td>
-		</tr>
-		</c:if>
+	</c:if>
 </c:if>
-		<tr>
-			<td align="center"><br> <a href="javascript:this.close();">닫 기</a>
-			</td>
-		<tr>
-			
-	</table>
+	<tr>
+		<td align="center"><br> <a href="javascript:this.close();">닫기</a></td>
+	</tr>
+</table>
 </center>
 </body>
 </html>
