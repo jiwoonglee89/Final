@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import Final.Dao.FileLoadDao;
 import Final.Dao.MemberDao;
+import Final.Dao.ZipcodeDao;
 import Final.Model.MemberInfo;
 
 @Controller
@@ -21,13 +22,20 @@ public class MemberController {
 	private MemberDao memberDao;
 	@Autowired
 	private FileLoadDao fileLoadDao;
-
+	@Autowired
+	private ZipcodeDao zipcodeDao;
+	
 	public void setMemberDao(MemberDao memberDao) {
 		this.memberDao = memberDao;
 	}
 
 	public void setFileLoadDao(FileLoadDao fileLoadDao) {
 		this.fileLoadDao = fileLoadDao;
+	}
+	
+	public void setZipcodeDao(ZipcodeDao zipcodeDao)
+	{
+		this.zipcodeDao = zipcodeDao;
 	}
 
 	@ModelAttribute("memberInfo")

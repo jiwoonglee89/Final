@@ -34,7 +34,7 @@
 			<tr>
 				<td width="200">*비밀번호 확인</td>
 				<td width="400">
-					<input type="password" name="password2" maxlength="20" size="25">
+					<input type="password" name="password" maxlength="20" size="25">
 				</td>
 			</tr>
 			<tr>
@@ -46,22 +46,14 @@
 			<tr>
 				<td width="200">*생년월일</td>
 				<td width="200">
-					<select name="birthY">
-						<option value=""></option>
-					</select>
-					<select name="birthM">
-						<option value=""></option>
-					</select>
-					<select name="birthD">
-						<option value=""></option>
-					</select>
+					<input type="date" name="birth">
 				</td>
 			</tr>
 			<tr>
 			<!-- 전화번호 유효성 검사 재프로그래밍할것 -->
 				<td width="200">*전화번호</td>
 				<td width="400">
-					<input type="text" name="Phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="20" onKeyPress="onlyNumber()" onBlur="onlyNumber2(this)"> 
+					<input type="text" name="phone" placeholder="-는 제외하고 입력해주세요." maxlength="11" size="20" onKeyPress="onlyNumber()" onBlur="onlyNumber2(this)"> 
 				</td>
 			</tr>
 			<tr>
@@ -94,7 +86,7 @@
 					<input type="submit"name="confirm" value="등 록"> 
 					<input type="reset"name="reset" value="다시 입력">
 					<!-- 이동위치 재설정 -->
-					 <input type="button" value="가입 안함" onclick="javascript:window.location='/semi_prj/main/mainForm.do'">
+					 <input type="button" value="가입 안함" onclick="javascript:window.location='loginForm.do'">
 				</td>
 			</tr>
 		</table>

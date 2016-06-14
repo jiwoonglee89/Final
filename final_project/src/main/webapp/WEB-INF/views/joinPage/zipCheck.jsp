@@ -17,7 +17,7 @@
 			<td>
 				<br> 
 				도로명 주소 입력 : <input name="area4"  type="text">
-				<input type="button" value="검색" onclick="dongCheck();">
+				<input type="button" value="검색" onclick="dongCheck()">
 			</td>
 		</tr>
 		<input type="hidden" name="check" value="n">

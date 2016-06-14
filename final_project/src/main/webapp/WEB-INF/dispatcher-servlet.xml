@@ -26,12 +26,16 @@
 		<property name="dataSource" ref="dataSource" />
 		<property name="mapperLocations" value="classpath:sql/*.xml" />
 	</bean>
+	
 	<!-- DAO 주입 -->
 	<bean id="fileLoadDao" class="Final.Dao.FileLoadDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>
 	<bean id="memberDao" class="Final.Dao.MemberDao">
 		<property name="sqlSessionFactory" ref="sqlSessionFactory" />
+	</bean>
+	<bean id="zipcodeDao" class="Final.Dao.ZipcodeDao">
+		<property name="sqlSessionFactory" ref="sqlSessionFactory" /> 
 	</bean>
 
 

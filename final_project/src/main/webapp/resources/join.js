@@ -12,10 +12,10 @@ function check() {
 	if (!document.joinF.password1.value) {
 		alert("비밀번호를 입력하세요");
 		return false;
-	} else if (!document.joinF.password2.value) {
+	} else if (!document.joinF.password.value) {
 		alert("비밀번호 확인란을 입력하세요.")
 		return false;
-	} else if (document.joinF.password1.value != document.joinF.password2.value) {
+	} else if (document.joinF.password1.value != document.joinF.password.value) {
 		alert("비밀번호를 동일하게 입력하세요");
 		return false;
 	}
@@ -26,12 +26,12 @@ function check() {
 	}
 	
 	/*전화번호 부분 수정*/
-	if (!document.joinF.Phone.value) {
+	if (!document.joinF.phone.value) {
 		alert("전화번호를 입력해주세요.");
 		return false;
 	}
 		
-	var checkN = document.joinF.Phone.value.length>8 && document.joinF.Phone.value.length<12; 
+	var checkN = document.joinF.phone.value.length>8 && document.joinF.phone.value.length<12; 
 	if (!checkN)
 	{
 		//010

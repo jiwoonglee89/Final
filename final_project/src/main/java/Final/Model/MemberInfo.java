@@ -4,7 +4,7 @@ public class MemberInfo {
 	private String id;
 	private String password;
 	private String name;
-	private String birth;
+	private int birth;
 	private String phone;
 	private String email;
 	private int zipcode;
@@ -28,10 +28,10 @@ public class MemberInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getBirth() {
+	public int getBirth() {
 		return birth;
 	}
-	public void setBirth(String birth) {
+	public void setBirth(int birth) {
 		this.birth = birth;
 	}
 	public String getPhone() {

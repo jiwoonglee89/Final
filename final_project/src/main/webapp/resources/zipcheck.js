@@ -2,11 +2,11 @@
  * 
  */
 function dongCheck() {
-		if (document.zipForm.area4.value == "") 
+		if (!document.zipForm.area4.value) 
 		{
 			alert("동이름을 입력하세요");
 			document.zipForm.area4.focus();
-			return;
+			return false;
 		}
 		document.zipForm.submit();
 	}
