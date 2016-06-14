@@ -6,7 +6,14 @@ public class MemberInfo {
 	private String id;
 	private String password;
 	private String name;
-	private Date birth;
+	/*private Date birth;*/
+	private String birth;
+	public String getBirth() {
+		return birth;
+	}
+	public void setBirth(String birth) {
+		this.birth = birth;
+	}
 	private String phone;
 	private String email;
 	private int zipcode;
@@ -30,12 +37,12 @@ public class MemberInfo {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Date getBirth() {
+	/*public Date getBirth() {
 		return birth;
 	}
 	public void setBirth(Date birth) {
 		this.birth = birth;
-	}
+	}*/
 	public String getPhone() {
 		return phone;
 	}

@@ -1,6 +1,7 @@
 package Final.Dao;
 
 import java.util.List;
+import java.util.Map;
 
 import org.mybatis.spring.support.SqlSessionDaoSupport;
 
@@ -34,9 +35,9 @@ public String idSearch(MemberInfo memberInfo) {
 		
 		return password;
 	}
-	public int insert(MemberInfo memberInfo)
+	public int insert(Map map)
 	{
-		return getSqlSession().insert("member.insert", memberInfo);
+		return getSqlSession().insert("member.insert", map);
 	}
 
 }

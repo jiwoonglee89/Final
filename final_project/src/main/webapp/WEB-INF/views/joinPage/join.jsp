@@ -1,4 +1,4 @@
- n<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page isELIgnored="false" %>
@@ -10,7 +10,7 @@
 <title>Web Cell Join Page</title>
 </head>
 <body onload="disable()">
-	<form name="joinF" action="loginForm.do" method="post" onSubmit="return check()">
+	<form name="joinF" action="join.do" method="post" onSubmit="return check()">
 		
 		<table width="600" border="1" cellspacing="0" cellpadding="3" align="center">
 			<tr>
@@ -47,6 +47,7 @@
 				<td width="200">*생년월일</td>
 				<td width="200">
 					<input type="date" name="birth">
+					<input type="button" name="checktim" onClick="javascript:; window.location='test.do?birth='+document.joinF.birth.value" value="joda Test">
 				</td>
 			</tr>
 			<tr>

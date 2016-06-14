@@ -1,6 +1,12 @@
 package Final.Controller;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -51,7 +57,6 @@ public class MemberController {
 		HttpSession session = request.getSession();
 		String id = (String) session.getAttribute("id");
 		model.addAttribute("id", id);
-		System.out.println(id);
 
 		return "loginPage/loginForm";
 	}
@@ -61,7 +66,6 @@ public class MemberController {
 	{
 		String id = request.getParameter("id");
 		String pass = request.getParameter("password");
-		System.out.println(id);
 		
 		MemberInfo memberInfo = memberDao.getMember(id);
 		if (memberInfo !=null) 
@@ -83,13 +87,26 @@ public class MemberController {
 	}
 	//회원가입 후 메인으로 이동
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
-	public String join()
+	public String join(@ModelAttribute("memberInfo") MemberInfo memberInfo, HttpServletRequest request)throws ParseException
 	{
+		System.out.println("확인용");
+		System.out.println(memberInfo.getBirth());
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.KOREA);
+		Date birth = sdf.parse(request.getParameter("birth"));
+		Map map=new HashMap();
+		map.put("id", memberInfo.getId());
+		map.put("password", memberInfo.getPassword());
+		map.put("name", memberInfo.getName());
+		map.put("birth", birth);
+		map.put("phone", memberInfo.getPhone());
+		map.put("email", memberInfo.getEmail());
+		map.put("zipcode", memberInfo.getZipcode());
+		map.put("address", memberInfo.getAddress());
+		int success=0;
+		success=memberDao.insert(map);
+		System.out.println(success);
 		
-		
-		
-		
-		return "joinPage/loginForm";
+		return "loginPage/loginForm";
 	}
 	//아이디와비밀번호 찾는 화면으로 이동
 	@RequestMapping("/idpwSearchNew.do")
@@ -99,7 +116,6 @@ public class MemberController {
 	//아이디 중복화면 관련 
 	@RequestMapping("/confirmId.do")
 	public String confirmID(Model model, HttpServletRequest request) {
-		System.out.println(request.getRequestURL());
 		// 아이디 중복 여부 변수
 		int check = 0;
 		// view에서 받은 id변수 값 받아서 Stirng 형식의 id 변수에 저장
@@ -173,10 +189,20 @@ public class MemberController {
 	public String zipcodePro(Model model,String area4)
 	{
 		List<ZipcodeDao> zipcodeDaoList = zipcodeDao.zipcodeSerach(area4);
-		System.out.println(zipcodeDaoList.size());
 		String check = "n";
 		model.addAttribute("zipcode", zipcodeDaoList);
 		model.addAttribute("check",check);
 		return "joinPage/zipCheck";
+	}
+	@RequestMapping("/test.do")
+	public String CheckTime(Model model, HttpServletRequest request) throws ParseException
+	{
+	
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd",Locale.KOREA);
+		Date today = sdf.parse(request.getParameter("birth"));
+		
+		
+		
+		return "joinPage/join";
 	}
 }
