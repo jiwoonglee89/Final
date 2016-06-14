@@ -72,8 +72,6 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
-	
-	
 	//주소록 검색 화면으로 이동
 	@RequestMapping(value="/zipCheck.do",method=RequestMethod.GET)
 	public String zipcheck()
@@ -88,9 +86,6 @@ public class MemberController {
 		
 		return "joinPage/zipCheck";
 	}
-	
-	
-	
 	//회원가입 화면으로 이동 
 	@RequestMapping(value="/join.do", method=RequestMethod.GET)
 	public String joinMove()
@@ -175,17 +170,12 @@ public class MemberController {
 		}
 		return "loginPage/loginForm";
 	}
-	//우편검색화면으로 이동
-	@RequestMapping(value="/zipcode.do", method=RequestMethod.GET)
-	public String moveZipView()
-	{
-		return "joinPage/zipcode";
-	}
-	//우편번호 검색
-	@RequestMapping(value="/zipcode.do", method=RequestMethod.POST)
+	//우편번호 검색(우편번호 검색화면은 JSP에서 처리함)
+	@RequestMapping(value="/zipCheck.do", method=RequestMethod.POST)
 	public String zipcodePro(HttpServletRequest request, Model model)
 	{
 		String area4 = request.getParameter("area4");
+		System.out.println("텍스트박스에 입력된 값: : :"+area4+"입니다.");
 		//ZipcodeDao zipcodeDao = zipcodeDao.zipcodeSerach();
 		
 		return "joinPage/zipcode";

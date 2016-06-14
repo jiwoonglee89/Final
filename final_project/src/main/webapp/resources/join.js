@@ -34,10 +34,6 @@ function check() {
 	var checkN = document.joinF.phone.value.length>8 && document.joinF.phone.value.length<12; 
 	if (!checkN)
 	{
-		//010
-		//02
-		//070
-		//0**
 		alert("전화번호를 알맞게 입력해주세요.");
 		return false;
 	}
