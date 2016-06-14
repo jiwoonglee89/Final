@@ -34,5 +34,9 @@ public String idSearch(MemberInfo memberInfo) {
 		
 		return password;
 	}
+	public int insert(MemberInfo memberInfo)
+	{
+		return getSqlSession().insert("member.insert", memberInfo);
+	}
 
 }

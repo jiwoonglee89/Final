@@ -85,6 +85,10 @@ public class MemberController {
 	@RequestMapping(value="/join.do", method=RequestMethod.POST)
 	public String join()
 	{
+		
+		
+		
+		
 		return "joinPage/loginForm";
 	}
 	//아이디와비밀번호 찾는 화면으로 이동
